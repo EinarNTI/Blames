@@ -1,0 +1,27 @@
+#logo {
+    width: 50px;
+}
+
+section {
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+}
+
+ul {
+    list-style: none;
+}
+
+.button {
+    background-color: blue;
+    padding: 0.25em;
+}
+
+#continue {
+    margin-right: 1em;
+}
+
+a {
+    font-size: 0.5;
+    text-decoration: none;
+}

@@ -1,0 +1,72 @@
+body {
+    size: 100%;
+}
+
+#logo {
+    width: 50px;
+}
+
+.material-icons {
+    font-family: Material Icons;
+    cursor: pointer;
+    margin-right: 2em;
+    margin-top: 0.5em;
+}
+
+header {
+    margin-top: -0.5em;
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    background-color: white;
+}
+
+main {
+    background-color: blueviolet;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    padding-top: 4em;
+    display: grid;
+}
+
+.mainGrid1 {
+    grid-template-rows: min-content 90%;
+    grid-template-columns: 80%;
+    grid-template-areas:
+        'srt'
+        'sct'
+    ;
+}
+
+.mainGrid2 {
+    grid-template-rows: min-content 90%;
+    grid-template-columns: 80%;
+    grid-template-areas:
+        'sct srt'
+    ;
+}
+
+section {
+    background-color: grey;
+    grid-area: sct;
+}
+
+aside {
+    grid-area: srt;
+    background-color: red;
+    padding-bottom: 0.5em;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.button {
+    background-color: blue;
+    border-radius: 0.5em;
+    padding: 0.5em;
+}

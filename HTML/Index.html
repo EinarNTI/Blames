@@ -5,30 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Log in</title>
     <link rel="stylesheet" href="../CSS/Index.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <header>
-        <img src="../IMG/Namnlös-removebg-preview(1).png" alt="" id="logo">
-        <div></div>
+        <img src="../IMG/Namnlös-removebg-preview(1).png" alt="bird" id="logo">
+        <i class="material-icons">menu</i>
     </header>
 
-    <section>
-        <ul>
-            <h2>Log in</h2>
-            <div>
-                <p>Username: </p>
-                <li><input type="text"></li>
-            </div>
-            <div>
-                <p>Password: </p>
-                <li><input type="text"></li>
-            </div>
-            <a href="" id="continue">Create a new account</a>
-            <br>
-            <a href="" class="button">Continue</a>                                     
-        </ul>
-        
-    </section>
+    <main id="grid">
+        <div id="as1"></div>
+
+        <section>
+            <ul>
+                <li>
+                    <h2 class="centerText">Log in</h2>
+                </li>
+                <li>
+                    <div>
+                        <p>Username: </p>
+                        <input type="text">
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p>Password: </p>
+                        <input type="password">
+                    </div>
+                </li>
+                <li class="responseButtons centerText">
+                    <a href="" id="continue" class="button">Continue</a>
+                    
+                </li>
+                <li class="centerText"> 
+                    <a href="" id="newAccount" class="responseButtons">Create a new account</a>
+                </li>
+            </ul>
+        </section>
+
+        <div id="as2"></div>
+
+    </main>
 
     <footer>
         <a href="">about us</a>

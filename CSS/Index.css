@@ -1,27 +1,78 @@
+#grid {
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: auto min-content auto;
+    grid-template-areas: 
+    'as1 lg as2'
+    'ft . .'
+    ;
+}
+
 #logo {
     width: 50px;
 }
 
 section {
     display: flex;
-    justify-content: center;
-    height: 100vh;
+    justify-content: center;   
+    grid-area: lg;
+    background-color: aqua;
+    padding: 0.5em 3em;
 }
 
 ul {
     list-style: none;
+    padding: 0;
 }
 
 .button {
     background-color: blue;
     padding: 0.25em;
+    cursor: pointer;
 }
 
 #continue {
-    margin-right: 1em;
+    font-size: 1em;
+}
+
+#newAccount {
+    font-size: 0.5em;
 }
 
 a {
-    font-size: 0.5;
     text-decoration: none;
+}
+
+.responseButtons {
+    padding-top: 0.75em;
+}
+
+.centerText {
+    text-align: center;
+}
+
+.material-icons {
+    font-family: Material Icons;
+    cursor: pointer;
+}
+
+header {
+    width: 99vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+}
+
+footer {
+    grid-area: ft;
+}
+
+#as1 {
+    grid-area: as1;
+}
+
+#as2 {
+    grid-area: as2;
 }

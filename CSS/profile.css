@@ -53,12 +53,20 @@ button {
     size: fit-content;
 }
 
-#settings {
+#settings1, #settings2, #settings3, #settings4 {
     grid-area: section;
     background-color: grey;
     display: flex;
     justify-content: center;
     padding-bottom: 70vh;
+}
+
+#settings1 {
+    visibility: visible;
+}
+
+#settings2, #settings3, #settings4 {
+    visibility: collapse;
 }
 
 #profilePicSettings {
@@ -68,7 +76,7 @@ button {
     height: 120px;
 }
 
-#info {
+.info {
     display: flex;
     flex-direction: column;
     justify-content: center;

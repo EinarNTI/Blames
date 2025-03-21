@@ -17,8 +17,8 @@ section {
     display: flex;
     justify-content: center;   
     grid-area: lg;
-    background-color: aqua;
     padding: 0.5em 3em;
+    border: 2px solid black;
 }
 
 ul {
@@ -27,9 +27,10 @@ ul {
 }
 
 .button {
-    background-color: blue;
+    background-color: black;
     padding: 0.25em;
     cursor: pointer;
+    color: white;
 }
 
 #continue {
@@ -42,6 +43,7 @@ ul {
 
 a {
     text-decoration: none;
+    color: black;
 }
 
 .responseButtons {
@@ -63,6 +65,7 @@ header {
     flex-direction: row;
     justify-content: space-between;
     position: fixed;
+    z-index: 1000;
 }
 
 footer {
@@ -96,4 +99,5 @@ footer {
     align-items: center;
     z-index: 999;
     position: fixed;
+    border: none;
 }

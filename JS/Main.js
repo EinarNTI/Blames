@@ -25,3 +25,10 @@ window.onresize = () => {
         switchGridBack();
     }
 }
+
+document.getElementById("title1").innerHTML = sessionStorage.getItem("post1Title")
+document.getElementById("text1").innerHTML = sessionStorage.getItem("post1Content")
+document.getElementById("title2").innerHTML = sessionStorage.getItem("post2Title")
+document.getElementById("text2").innerHTML = sessionStorage.getItem("post2Content")
+document.getElementById("title3").innerHTML = sessionStorage.getItem("post3Title")
+document.getElementById("text3").innerHTML = sessionStorage.getItem("post3Content")

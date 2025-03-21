@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="../CSS/profile.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="../JS/burgerMenu.js" defer></script>
+    <script src="../JS/settings.js" defer></script>
 </head>
 <body>
     <section id="glider" class="glide2">
@@ -22,11 +23,11 @@
     </header>
 
     <main>
-        <section id="settings">
+        <section id="settings1">
             <div>
                 <img src="../IMG/th-155281130.jpg" alt="" id="profilePicSettings">
             </div>
-            <div id="info">
+            <div class="info">
                 <h3>Username</h3>
                 <input type="text" placeholder="Username">
                 <h3>Description</h3>
@@ -34,11 +35,37 @@
                 <button>Save</button>
             </div>
         </section>
+
+        <section id="settings2">
+            <div>
+                <h4>Dark mode</h4>
+                <input type="checkbox">
+                <h4>Sell my data</h4>
+                <input type="checkbox">
+            </div>
+        </section>
+
+        <section id="settings3">
+            <div class="info">
+                <h3>Wipe my data</h3>
+                <button>Wipe</button>
+                <h3>Delete my account</h3>
+                <button>Delete</button>
+            </div>
+        </section>
+
+        <section id="settings4">
+            <div class="info">
+                <h3>Are you sure?</h3>
+                <button>Yes</button>
+            </div>
+        </section>
+
         <aside>
-            <button>About</button>
-            <button>Settings</button>
-            <button>The Danger Zone</button>
-            <button>Log out</button>
+            <button id="aboutButton">About</button>
+            <button id="settingsButton">Settings</button>
+            <button id="dangerButton">The Danger Zone</button>
+            <button id="logOutButton">Log out</button>
         </aside>
     </main>
 </body>

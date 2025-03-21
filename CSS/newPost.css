@@ -1,0 +1,68 @@
+.glide1 {
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    position: fixed;
+    border: none;
+}
+
+.glide2 {
+    display: none;
+}
+
+#logo {
+    width: 50px;
+}
+
+.material-icons {
+    font-family: Material Icons;
+    cursor: pointer;
+}
+
+header {
+    width: 99vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    position: fixed;
+    z-index: 1000;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+#newPostSection {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 30vw;
+    justify-self: center;
+}
+
+main {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    align-self: center;
+}
+
+textarea {
+    resize:none;
+}
+
+#newPostSection div {
+    display: flex;
+    align-content: center;
+    justify-content: space-evenly;
+}

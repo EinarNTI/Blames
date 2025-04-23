@@ -1,110 +1,280 @@
-body {
-    size: 100%;
-}
-
 #logo {
-    width: 50px;
+  width: 50px;
 }
 
 .material-icons {
-    font-family: Material Icons;
-    cursor: pointer;
-    margin-right: 2em;
-    margin-top: 0.5em;
+  font-family: Material Icons;
+  cursor: pointer;
+  margin-right: 2em;
+  margin-top: 0.5em;
 }
 
 header {
-    margin-top: -0.5em;
-    width: 100vw;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    position: fixed;
-    background-color: white;
-    z-index: 1000;
+  margin-top: -0.5em;
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: fixed;
+  background-color: rgba(255, 255, 255, 0);
+  z-index: 1000;
+  align-items: center;
+  top: 8px;
 }
 
 main {
-    padding-top: 4em;
-    display: grid;
-    grid-template-columns: 80% 20%;
-    grid-template-areas:
-        'section aside';
-    grid-template-columns:
-        'section aside';
+  padding-top: 4em;
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-areas:
+    'section aside';
+  min-height: 80vh;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  margin: 1em;
+  overflow: hidden;
 }
 
 aside {
-    grid-area: aside;
-    background-color: red;
-    display: flex;
-    flex-direction: column;
+  grid-area: aside;
+  background-color: red;
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  border-radius: 1em;
+  margin-bottom: 2em;
+  padding-top: 1em;
 }
 
 button {
-    margin-top: 1em;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
-    padding: 0.5em;
-    border-radius: 0.5em;
-    background-color: white;
-    border: 1px solid black;
-    cursor: pointer;
-    size: fit-content;
+  margin-top: 1em;
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  background-color: white;
+  border: 1px solid black;
+  cursor: pointer;
+  size: fit-content;
 }
 
-#settings1, #settings2, #settings3, #settings4 {
-    grid-area: section;
-    background-color: grey;
-    display: flex;
-    justify-content: center;
-    padding-bottom: 70vh;
+#settings1,
+#settings2,
+#settings3,
+#settings4 {
+  grid-area: section;
+  background-color: grey;
+  display: flex;
+  justify-content: center;
+  padding-bottom: 70vh;
 }
 
 #settings1 {
-    visibility: visible;
+  visibility: visible;
+  flex-direction: column;
 }
 
-#settings2, #settings3, #settings4 {
-    visibility: collapse;
+#settings1 div {
+  justify-self: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#settings2,
+#settings3,
+#settings4 {
+  visibility: collapse;
 }
 
 #profilePicSettings {
-    margin-top: 19px;
-    margin-right: 1em;
-    width: 120px;
-    height: 120px;
+  margin-top: 19px;
+  width: 120px;
+  height: 120px;
+  align-self: center;
 }
 
 .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
 }
 
 .glide1 {
-    background-color: white;
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;    
-    align-items: center;
-    z-index: 999;
-    position: fixed;
+  background-color: white;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  position: absolute;
 }
 
 a {
-    text-decoration: none;
-    color: black;
+  text-decoration: none;
+  color: black;
 }
 
 .glide2 {
-    display: none;
+  display: none;
 }
 
 #close {
-    align-self: flex-end;
-    margin-right: 40vw;
+  align-self: flex-end;
+  margin-right: 40vw;
+}
+
+body {
+  background-color: #f5f7fa;
+  min-height: calc(100vh - 4em);
+}
+
+#settings1 {
+  background-color: white;
+  padding: 2em;
+}
+
+#profilePicSettings {
+  border: 4px solid #020f17;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+  transition: transform 0.3s;
+}
+
+#profilePicSettings:hover {
+  transform: scale(1.05);
+}
+
+.info h3 {
+  color: #2c3e50;
+  font-weight: 600;
+  margin-bottom: 0.5em;
+}
+
+.info input {
+  border: 2px solid #e0e6ed;
+  border-radius: 8px;
+  padding: 0.75em;
+  margin-bottom: 1em;
+  transition: border 0.3s;
+  width: 80%;
+}
+
+.info input:focus {
+  border-color: #3498db;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+#settings2,
+#settings3,
+#settings4 {
+  background-color: white;
+  padding: 2em;
+}
+
+#settings2 h4 {
+  color: #2c3e50;
+  font-weight: 500;
+  margin-bottom: 0.5em;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #bdc3c7;
+  border-radius: 4px;
+  margin-right: 0.5em;
+  position: relative;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+  background-color: #3498db;
+  border-color: #3498db;
+}
+
+input[type="checkbox"]:checked::after {
+  content: "✓";
+  color: white;
+  position: absolute;
+  top: -2px;
+  left: 2px;
+}
+
+#settings3 {
+  background-color: #fff5f5;
+}
+
+#settings3 h3 {
+  color: #e74c3c;
+  font-weight: 600;
+}
+
+#settings4 {
+  background-color: #fff5f5;
+}
+
+button {
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75em 1.5em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  width: fit-content;
+  margin: 0.5em 0;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+#dangerButton {
+  background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+#dangerButton:hover {
+  background: linear-gradient(135deg, #c0392b, #a5281b);
+}
+
+aside button {
+  width: 90%;
+  margin: 0.5em auto;
+  text-align: left;
+  padding-left: 1.5em;
+  position: relative;
+}
+
+aside button::before {
+  content: "→";
+  position: absolute;
+  left: 0.75em;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+aside button:hover::before {
+  opacity: 1;
+  left: 0.5em;
+}
+
+footer {
+  position: absolute;
+  background-color: white;
+  width: auto;
+  left: 0;
+  bottom: 0;
+  width: 100vw;
+}
+
+footer a {
+  display: block;
 }

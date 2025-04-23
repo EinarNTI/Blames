@@ -3,61 +3,60 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Settings</title>
     <link rel="stylesheet" href="../CSS/profile.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="../JS/burgerMenu.js" defer></script>
     <script src="../JS/settings.js" defer></script>
 </head>
 <body>
-    <section id="glider" class="glide2">
-        <i class="material-icons" id="close">close</i>
-        <a href="../HTML/Index.html">1</a>
-        <a href="../HTML/Main.html">2</a>
-        <a href="../HTML/profile.html">3</a>
-    </section>
-
     <header>
         <img src="../IMG/Namnlös-removebg-preview(1).png" alt="bird" id="logo">
         <i class="material-icons" id="burgerButton">menu</i>
     </header>
 
+    <section id="glider" class="glide2">
+        <i class="material-icons" id="close">close</i>
+        <a href="../HTML/Index.html">Login Page</a>
+        <a href="../HTML/Main.html">Main Page</a>
+        <a href="../HTML/newPost.html">New Post</a>
+    </section>
+
+
     <main>
         <section id="settings1">
-            <div>
+            <div id="profilePicdiv">
                 <img src="../IMG/th-155281130.jpg" alt="" id="profilePicSettings">
             </div>
             <div class="info">
                 <h3>Username</h3>
-                <input type="text" placeholder="Username">
+                <input id="username" type="text" placeholder="Username">
                 <h3>Description</h3>
-                <input type="text" placeholder="Description">
-                <button>Save</button>
+                <input id="description" type="text" placeholder="Description">
+                <button id="saveButton">Save</button>
             </div>
         </section>
-
+        
         <section id="settings2">
             <div>
                 <h4>Dark mode</h4>
-                <input type="checkbox">
-                <h4>Sell my data</h4>
-                <input type="checkbox">
+                <input id="theme" type="checkbox">
             </div>
         </section>
 
         <section id="settings3">
             <div class="info">
                 <h3>Wipe my data</h3>
-                <button>Wipe</button>
+                <button id="wipe">Wipe</button>
                 <h3>Delete my account</h3>
-                <button>Delete</button>
+                <button id="delete">Delete</button>
             </div>
         </section>
 
         <section id="settings4">
             <div class="info">
                 <h3>Are you sure?</h3>
-                <button>Yes</button>
+                <button id="yesButton">Yes</button>
             </div>
         </section>
 
@@ -68,5 +67,10 @@
             <button id="logOutButton">Log out</button>
         </aside>
     </main>
+    <footer>
+        <a href="../HTML/Index.html">Login Page</a>
+        <a href="../HTML/Main.html">Main Page</a>
+        <a href="../HTML/newPost.html">New Post</a>
+    </footer>
 </body>
 </html>

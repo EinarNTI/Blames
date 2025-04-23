@@ -7,23 +7,22 @@
     <link rel="stylesheet" href="../CSS/Index.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="../JS/burgerMenu.js" defer></script>
+    <script src="../JS/login.js" defer></script>
 </head>
 <body>
     <section id="glider" class="glide2">
         <i class="material-icons" id="close">close</i>
-        <a href="../HTML/Index.html">1</a>
-        <a href="../HTML/Main.html">2</a>
-        <a href="../HTML/profile.html">3</a>
+        <a href="../HTML/Main.html">Main Page</a>
+        <a href="../HTML/newPost.html">New Post</a>
+        <a href="../HTML/profile.html">Settings</a>
     </section>
     <header>
         <img src="../IMG/Namnlös-removebg-preview(1).png" alt="bird" id="logo">
         <i class="material-icons"  id="burgerButton">menu</i>
     </header>
 
-    <main id="grid">
-        <div id="as1"></div>
-
-        <section>
+    <main>
+        <section id="boxLogin">
             <ul>
                 <li>
                     <h2 class="centerText">Log in</h2>
@@ -31,31 +30,56 @@
                 <li>
                     <div>
                         <p>Username: </p>
-                        <input type="text">
+                        <input type="text" id="username1">
                     </div>
                 </li>
                 <li>
                     <div>
                         <p>Password: </p>
-                        <input type="password">
+                        <input type="password" id="password1">
                     </div>
                 </li>
                 <li class="responseButtons centerText">
-                    <a href="" id="continue" class="button">Continue</a>
+                    <button id="continueLogin" class="button">Continue</button>
                     
                 </li>
                 <li class="centerText"> 
-                    <a href="" id="newAccount" class="responseButtons">Create a new account</a>
+                    <button id="newAccount" class="smallButton responseButtons">Create a new account</button>
                 </li>
             </ul>
         </section>
 
-        <div id="as2"></div>
-
+        <section id="boxNew">
+            <ul>
+                <li>
+                    <h2 class="centerText">Create Account</h2>
+                </li>
+                <li>
+                    <div>
+                        <p>Username: </p>
+                        <input type="text" id="username2">
+                    </div>
+                </li>
+                <li>
+                    <div>
+                        <p>Password: </p>
+                        <input type="password" id="password2">
+                    </div>
+                </li>
+                <li class="responseButtons centerText">
+                    <button id="continueNew" class="button">Continue</button>
+                </li>
+                <li class="centerText">
+                    <button id="login" class="smallButton responseButtons">Log in</button>
+                </li>
+            </ul>
+        </section>
     </main>
 
     <footer>
-        <a href="">about us</a>
+        <a href="../HTML/Main.html">Main Page</a>
+        <a href="../HTML/newPost.html">New Post</a>
+        <a href="../HTML/profile.html">Settings</a>
     </footer>
 </body>
 </html>

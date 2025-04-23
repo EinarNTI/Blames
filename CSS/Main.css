@@ -1,5 +1,16 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
-    size: 100%;
+    width: 100%;
+    position: relative;
+    display: flex;
+    margin-bottom: -1em;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 #logo {
@@ -20,8 +31,9 @@ header {
     flex-direction: row;
     justify-content: space-between;
     position: fixed;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0);
     z-index: 1000;
+    align-items: center;
 }
 
 main {
@@ -30,6 +42,8 @@ main {
     height: fit-content;
     padding-top: 4em;
     display: grid;
+    min-height: calc(100vh - 4em);
+    margin: 0;
 }
 
 .mainGrid1 {
@@ -56,6 +70,7 @@ section {
 aside {
     grid-area: srt;
     padding-bottom: 0.5em;
+    margin-left: 3em;
 }
 
 a {
@@ -64,9 +79,10 @@ a {
 }
 
 .button {
-    background-color: blue;
+    background-color: #3498DB;
     border-radius: 0.5em;
     padding: 0.5em;
+    color: white;
 }
 
 .glide2 {
@@ -80,16 +96,107 @@ a {
 
 .glide1 {
     background-color: white;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 999;
-    position: fixed;
+    position: absolute;
 }
 
 #newPost {
     margin-top: 0.5em;
+}
+
+article {
+    background-color:aqua;
+    overflow-wrap: break-word;
+}
+
+aside div {
+    display: inline-block;
+    margin-bottom: 1em;
+}
+
+button {
+    all: unset;
+    cursor: pointer;
+}
+
+.username {
+    font-size: 0.75em;
+    margin-top: 0.25em;
+    margin-bottom: 0.5em;
+}
+
+.title {
+    margin-bottom: 0.25em;
+}
+
+article {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 1.5em;
+    margin-bottom: 1em;
+    transition: transform 0.2s;
+}
+
+article:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+aside .button {
+    background: #3498DB;
+    color: white;
+    margin: 0.5em 0;
+    display: block;
+    text-align: center;
+}
+
+#article1 {
+    border-left: 4px solid #3498DB;
+}
+
+#article2 {
+    border-left: 4px solid #E74C3C;
+}
+
+#article3 {
+    border-left: 4px solid #FFD700;
+}
+
+#noPosts {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: #3498DB 2px solid;
+    box-shadow: black 0px 0px 2px;
+    width: 80%;
+    justify-self: center;
+    height: 50%;
+}
+
+#noPosts p {
+    padding-left: 1em;
+    padding-right: 1em;
+}
+
+footer {
+    position: absolute;
+    justify-self: end;
+    background-color: white;
+    width: max-content;
+    width: 100%;
+    box-sizing: content-box;
+    margin-bottom: 0;
+    bottom: 0;
+}
+
+footer a {
+    display: block;
 }

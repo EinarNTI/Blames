@@ -1,12 +1,16 @@
-#grid {
+body {
+    margin-left: 0;
+    background-color: #f9f9f9;
+    background-image: url('../IMG/kuu-akura-pnK6Q-QTHM4-unsplash.png');
+    background-size: cover;
     width: 100vw;
-    height: 100vh;
+}
+
+main {
+    width: 100vw;
+    min-height: max-content;
     display: grid;
-    grid-template-columns: auto min-content auto;
-    grid-template-areas: 
-    'as1 lg as2'
-    'ft . .'
-    ;
+    margin-bottom: 0;
 }
 
 #logo {
@@ -17,8 +21,13 @@ section {
     display: flex;
     justify-content: center;   
     grid-area: lg;
-    padding: 0.5em 3em;
     border: 2px solid black;
+    width: fit-content;
+    padding-left: 1em;
+    padding-right: 1em;
+    height: fit-content;
+    padding-bottom: 2em;
+    margin-top: 1.5em;
 }
 
 ul {
@@ -30,15 +39,16 @@ ul {
     background-color: black;
     padding: 0.25em;
     cursor: pointer;
-    color: white;
+    color: black;
 }
 
 #continue {
     font-size: 1em;
 }
 
-#newAccount {
+.smallButton {
     font-size: 0.5em;
+    cursor: pointer;
 }
 
 a {
@@ -57,27 +67,30 @@ a {
 .material-icons {
     font-family: Material Icons;
     cursor: pointer;
+    margin-right: 2em;
+    margin-top: 0.5em;
 }
 
 header {
-    width: 99vw;
+    width: 100vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     position: fixed;
     z-index: 1000;
+    margin-top: -0.5em;
 }
 
 footer {
-    grid-area: ft;
+    position:absolute;
+    background-color: white;
+    width: 100vw;
+    bottom: 0;
+    padding-top: 0.5em;
 }
 
-#as1 {
-    grid-area: as1;
-}
-
-#as2 {
-    grid-area: as2;
+footer a {
+    display: block;
 }
 
 .glide2 {
@@ -91,13 +104,50 @@ footer {
 
 .glide1 {
     background-color: white;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     z-index: 999;
-    position: fixed;
+    position: absolute;
     border: none;
+    margin: 0;
+    top: 0;
+}
+
+button {
+    all: unset;
+}
+
+#boxNew {
+    visibility: collapse;
+}
+
+#boxLogin, #boxNew {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 2em;
+    grid-area: box;
+}
+
+input[type="text"],
+input[type="password"] {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.5em;
+    margin: 0.5em 0;
+}
+
+.button {
+    background-color: #3498DB;
+    border: none;
+    padding: 0.75em 1.5em;
+    border-radius: 4px;
+}
+
+.button:hover {
+    background-color: #2980B9;
 }

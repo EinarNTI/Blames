@@ -4,7 +4,7 @@ document.getElementById("continueLogin").addEventListener("click", function() {
         window.location.href = "../HTML/Main.html";
     }
     else {
-        alert("Invalid username or password");
+        alert("Invalid username or password. Try again, or create a new account if you do not have one. Sometimes accounts are not saved correctly, and a new account may be needed.");
     }
 });
 

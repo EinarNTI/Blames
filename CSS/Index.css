@@ -9,8 +9,9 @@ body {
 main {
     width: 100vw;
     min-height: max-content;
-    display: grid;
     margin-bottom: 0;
+    display: flex;
+    justify-content: center;
 }
 
 #logo {
@@ -20,14 +21,13 @@ main {
 section {
     display: flex;
     justify-content: center;   
-    grid-area: lg;
     border: 2px solid black;
-    width: fit-content;
     padding-left: 1em;
     padding-right: 1em;
     height: fit-content;
     padding-bottom: 2em;
     margin-top: 1.5em;
+    grid-area: sec;
 }
 
 ul {
@@ -68,7 +68,6 @@ a {
     font-family: Material Icons;
     cursor: pointer;
     margin-right: 2em;
-    margin-top: 0.5em;
 }
 
 header {
@@ -78,7 +77,8 @@ header {
     justify-content: space-between;
     position: fixed;
     z-index: 1000;
-    margin-top: -0.5em;
+    align-items: center;
+    top: 0;
 }
 
 footer {
@@ -125,11 +125,16 @@ button {
     visibility: collapse;
 }
 
-#boxLogin, #boxNew {
+#boxLogin {
+    visibility: collapse;
+}
+
+#boxLogin, #boxNew, #boxWelcome {
     background: white;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    padding: 2em;
+    padding-left: 2em;
+    padding-right: 2em;
     grid-area: box;
 }
 

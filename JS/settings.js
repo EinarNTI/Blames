@@ -98,6 +98,7 @@ function handleDarkMode() {
         document.querySelectorAll("footer a").forEach(a => {
             a.style.color = "white";
         });
+        document.getElementsByTagName("html")[0].style.backgroundColor = "#1a1a1a";
     } else {
         document.body.style.backgroundColor = "white";
         document.getElementsByTagName("main")[0].style.backgroundColor = "white";
@@ -114,6 +115,7 @@ function handleDarkMode() {
         document.querySelectorAll("footer a").forEach(a => {
             a.style.color = "black";
         });
+        document.getElementsByTagName("html")[0].style.backgroundColor = "white";
     }
 }
 

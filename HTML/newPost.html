@@ -1,49 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>New Post - Blames</title>
     <link rel="stylesheet" href="../CSS/newPost.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src="../JS/burgerMenu.js" defer></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="../JS/newPost.js" defer></script>
+    <script src="../JS/burgerMenu.js" defer></script>
 </head>
+
 <body>
     <header>
-        <img src="../IMG/Namnlös-removebg-preview(1).png" alt="bird" id="logo" onclick="location.href='../HTML/Main.html'">
-        <i class="material-icons" id="burgerButton">menu</i>
+        <img src="../IMG/Namnlös-removebg-preview(1).png" alt="bird" id="logo"
+            onclick="location.href='../HTML/Main.html'">
+        <div class="header-controls">
+            <i class="material-icons" id="burgerButton">menu</i>
+        </div>
     </header>
-    
+
     <section id="glider" class="glide2">
         <i class="material-icons" id="close">close</i>
         <a href="../HTML/Index.html" class="button">Login Page</a>
         <a href="../HTML/Main.html" class="button">Main Page</a>
         <a href="../HTML/profile.html" class="button">Settings</a>
+        <a href="../HTML/about.html" class="button">About us</a>
     </section>
 
     <main>
         <section id="newPostSection">
             <h2>Post new Blames</h2>
-            <input type="text" placeholder="Title" id="postTitle">
-            <textarea name="" id="postContent" cols="30" rows="10" placeholder="Content"></textarea>
-            <div>
-                <p>politics</p>
-                <p>memes</p>
-                <p>technology</p>
+            <input type="text" placeholder="Title" id="postTitle" required>
+            <textarea name="postContent" id="postContent" cols="30" rows="10" placeholder="Share your thoughts..."
+                required></textarea>
+
+            <div class="category-labels">
+                <p>Politics</p>
+                <p>Memes</p>
+                <p>Technology</p>
             </div>
-            <div>
-                <input type="checkbox" id="politics">
-                <input type="checkbox" id="memes">
-                <input type="checkbox" id="technology">
+            <div class="category-checkboxes">
+                <input type="checkbox" id="politics" name="politics">
+                <input type="checkbox" id="memes" name="memes">
+                <input type="checkbox" id="technology" name="technology">
             </div>
-            <button onclick="" id="postButton">Post</button>
+
+            <button id="postButton" type="button">
+                <span>Post Blame</span>
+                <i class="material-icons">send</i>
+            </button>
         </section>
     </main>
+
     <footer>
         <a href="../HTML/Main.html" class="button">Main Page</a>
         <a href="../HTML/Index.html" class="button">Login Page</a>
         <a href="../HTML/profile.html" class="button">Settings</a>
+        <a href="../HTML/about.html" class="button">About us</a>
     </footer>
 </body>
+
 </html>

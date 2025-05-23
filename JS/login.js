@@ -1,4 +1,13 @@
-document.getElementById("continueLogin").addEventListener("click", function() {
+document.documentElement.setAttribute('data-theme', localStorage.getItem("theme") === "true" ? "dark" : "light");
+
+function handleDarkMode() {
+    const theme = localStorage.getItem("theme") === "true" ? "dark" : "light";
+    document.documentElement.setAttribute('data-theme', theme);
+}
+
+handleDarkMode();
+
+document.getElementById("continueLogin").addEventListener("click", function () {
     if ((document.getElementById("username1").value == localStorage.getItem("validUser")) && (document.getElementById("password1").value == localStorage.getItem("validPassword"))) {
         localStorage.setItem("activeUser", localStorage.getItem("validUser"));
         window.location.href = "../HTML/Main.html";
@@ -16,8 +25,8 @@ document.getElementById("continueNew").addEventListener("click", function () {
 });
 
 document.getElementById("newAccount").addEventListener("click", function () {
-    document.getElementById("boxLogin").style.visibility = "collapse";
-    document.getElementById("boxNew").style.visibility = "visible";
+    document.getElementById("boxLogin").style.display = "none";
+    document.getElementById("boxNew").style.display = "block";
     inputs = document.getElementsByTagName("input");
     for (let i = 0; i < inputs.length; i++) {
         inputs[i].value = "";
@@ -25,8 +34,8 @@ document.getElementById("newAccount").addEventListener("click", function () {
 });
 
 document.getElementById("login").addEventListener("click", function () {
-    document.getElementById("boxNew").style.visibility = "collapse";
-    document.getElementById("boxLogin").style.visibility = "visible";
+    document.getElementById("boxNew").style.display = "none";
+    document.getElementById("boxLogin").style.display = "block";
     inputs = document.getElementsByTagName("input");
     for (let i = 0; i < inputs.length; i++) {
         inputs[i].value = "";
@@ -34,13 +43,13 @@ document.getElementById("login").addEventListener("click", function () {
 });
 
 document.getElementById("redirNew").addEventListener("click", function () {
-    document.getElementById("boxWelcome").style.visibility = "collapse";
-    document.getElementById("boxNew").style.visibility = "visible";
+    document.getElementById("boxWelcome").style.display = "none";
+    document.getElementById("boxNew").style.display = "block";
 });
 
 document.getElementById("redirLogIn").addEventListener("click", function () {
-    document.getElementById("boxWelcome").style.visibility = "collapse";
-    document.getElementById("boxLogin").style.visibility = "visible";
+    document.getElementById("boxWelcome").style.display = "none";
+    document.getElementById("boxLogin").style.display = "block";
 });
 
 document.getElementById("redirMain").addEventListener("click", function () {

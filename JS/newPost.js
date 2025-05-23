@@ -1,66 +1,103 @@
-if (localStorage.getItem("activeUser") == null) {
+document.documentElement.setAttribute('data-theme', localStorage.getItem("theme") === "true" ? "dark" : "light");
+
+if (localStorage.getItem("activeUser") == null || localStorage.getItem("activeUser") == "") {
     alert("You are not logged in. Redirecting to login page.");
     window.location.href = "index.html";
 }
 
-document.getElementById("postButton").addEventListener("click", function () {
-    if ((!document.getElementById("postTitle").value == "" && !document.getElementById("postContent").value == "" || localStorage.getItem("activeUser") == "guest")) {
-        if (sessionStorage.getItem("post1Title") === null) {
-            sessionStorage.setItem("post1Title", document.getElementById("postTitle").value)
-            sessionStorage.setItem("post1Content", document.getElementById("postContent").value)
-            sessionStorage.setItem("post1politics", document.getElementById("politics").checked)
-            sessionStorage.setItem("post1memes", document.getElementById("memes").checked)
-            sessionStorage.setItem("post1technology", document.getElementById("technology").checked)
-            sessionStorage.setItem("post1User", localStorage.getItem("activeUser"))
-        } else if (sessionStorage.getItem("post2Title") === null) {
-            sessionStorage.setItem("post2Title", document.getElementById("postTitle").value)
-            sessionStorage.setItem("post2Content", document.getElementById("postContent").value)
-            sessionStorage.setItem("post2politics", document.getElementById("politics").checked)
-            sessionStorage.setItem("post2memes", document.getElementById("memes").checked)
-            sessionStorage.setItem("post2technology", document.getElementById("technology").checked)
-            sessionStorage.setItem("post2User", localStorage.getItem("activeUser"))
-        } else if (sessionStorage.getItem("post3Title") === null) {
-            sessionStorage.setItem("post3Title", document.getElementById("postTitle").value)
-            sessionStorage.setItem("post3Content", document.getElementById("postContent").value)
-            sessionStorage.setItem("post3politics", document.getElementById("politics").checked)
-            sessionStorage.setItem("post3memes", document.getElementById("memes").checked)
-            sessionStorage.setItem("post3technology", document.getElementById("technology").checked)
-            sessionStorage.setItem("post3User", localStorage.getItem("activeUser"))
-        } else {
-            sessionStorage.setItem("post1Title", document.getElementById("postTitle").value)
-            sessionStorage.setItem("post1Content", document.getElementById("postContent").value)
-            sessionStorage.setItem("post1politics", document.getElementById("politics").checked)
-            sessionStorage.setItem("post1memes", document.getElementById("memes").checked)
-            sessionStorage.setItem("post1technology", document.getElementById("technology").checked)
-            sessionStorage.setItem("post1User", localStorage.getItem("activeUser"))
-        }
-        window.location.href = "Main.html";
-    } else if (localStorage.getItem("activeUser") == "Guest") {
+function validateForm() {
+    const title = document.getElementById("postTitle").value.trim();
+    const content = document.getElementById("postContent").value.trim();
+    const activeUser = localStorage.getItem("activeUser");
+
+    if (activeUser === "guest" || activeUser === "Guest") {
         alert("You are logged in as a guest. You cannot create a post.");
-    } else {
-        alert("Please fill in all fields.");
+        return false;
     }
+
+    if (title === "" || content === "") {
+        alert("Please fill in all fields.");
+        return false;
+    }
+
+    return true;
+}
+
+document.getElementById("postButton").addEventListener("click", function () {
+    if (!validateForm()) {
+        return;
+    }
+
+    const button = this;
+    const originalContent = button.innerHTML;
+    button.innerHTML = '<span>Posting...</span><i class="material-icons">hourglass_empty</i>';
+    button.disabled = true;
+
+    setTimeout(() => {
+        const title = document.getElementById("postTitle").value.trim();
+        const content = document.getElementById("postContent").value.trim();
+        const activeUser = localStorage.getItem("activeUser");
+
+        let postSlot = null;
+        for (let i = 1; i <= 3; i++) {
+            if (sessionStorage.getItem(`post${i}Title`) === null) {
+                postSlot = i;
+                break;
+            }
+        }
+
+        if (postSlot === null) {
+            postSlot = 1;
+        }
+
+        sessionStorage.setItem(`post${postSlot}Title`, title);
+        sessionStorage.setItem(`post${postSlot}Content`, content);
+        sessionStorage.setItem(`post${postSlot}politics`, document.getElementById("politics").checked);
+        sessionStorage.setItem(`post${postSlot}memes`, document.getElementById("memes").checked);
+        sessionStorage.setItem(`post${postSlot}technology`, document.getElementById("technology").checked);
+        sessionStorage.setItem(`post${postSlot}User`, activeUser);
+
+        button.innerHTML = '<span>Posted!</span><i class="material-icons">check</i>';
+        button.style.background = "linear-gradient(135deg, #10b981, #059669)";
+
+        setTimeout(() => {
+            window.location.href = "Main.html";
+        }, 1000);
+
+    }, 800);
 });
 
-document.body.addEventListener("click", handleDarkMode);
-handleDarkMode();
+document.addEventListener('DOMContentLoaded', function () {
 
-function handleDarkMode() {
-    if (localStorage.getItem("theme") == "true") {
-        document.body.style.backgroundColor = "#1a1a1a";
-        document.querySelectorAll("h3").forEach(h3 => {
-            h3.style.color = "white";
-        });
-        document.querySelectorAll("h2").forEach(p => {
-            p.style.color = "white";
-        });
-        document.querySelectorAll("p").forEach(p => {
-            p.style.color = "white";
-        });
-        document.getElementById("burgerButton").style.color = "white";
-        document.getElementsByTagName("footer")[0].style.backgroundColor = "black";
-        document.querySelectorAll("footer a").forEach(a => {
-            a.style.color = "white";
+    const textarea = document.getElementById("postContent");
+    if (textarea) {
+        textarea.addEventListener('input', function () {
+            this.style.height = 'auto';
+            this.style.height = Math.max(this.scrollHeight, 120) + 'px';
         });
     }
-}
+
+    const titleInput = document.getElementById("postTitle");
+    if (titleInput) {
+        titleInput.addEventListener('input', function () {
+            const maxLength = 100;
+            const currentLength = this.value.length;
+
+            if (currentLength > maxLength * 0.8) {
+                this.style.borderColor = currentLength > maxLength ? '#ef4444' : '#f59e0b';
+            } else {
+                this.style.borderColor = '';
+            }
+        });
+    }
+
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function () {
+            const label = document.querySelector(`label[for="${this.id}"]`);
+            if (label) {
+                label.style.fontWeight = this.checked ? '600' : '500';
+            }
+        });
+    });
+});

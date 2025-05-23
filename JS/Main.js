@@ -1,3 +1,5 @@
+document.documentElement.setAttribute('data-theme', localStorage.getItem("theme") === "true" ? "dark" : "light");
+
 if (localStorage.getItem("activeUser") == null || localStorage.getItem("activeUser") == "") {
     alert("You are not logged in. Redirecting to login page.");
     window.location.href = "index.html";
@@ -156,24 +158,8 @@ document.getElementById("technology").addEventListener("click", function () {
 });
 
 function handleDarkMode() {
-    if (localStorage.getItem("theme") == "true") {
-        document.body.style.backgroundColor = "#1a1a1a";
-        document.getElementById("article1").style.backgroundColor = "black";
-        document.getElementById("article2").style.backgroundColor = "black";
-        document.getElementById("article3").style.backgroundColor = "black";
-        document.getElementById("article1").style.color = "white";
-        document.getElementById("article2").style.color = "white";
-        document.getElementById("article3").style.color = "white";
-        document.querySelectorAll("h3").forEach(h3 => {
-            h3.style.color = "white";
-        });
-        document.getElementById("burgerButton").style.color = "white";
-        document.getElementsByTagName("footer")[0].style.backgroundColor = "black";
-        document.querySelectorAll("footer a").forEach(a => {
-            a.style.color = "white";
-        });
-        document.getElementById("noPosts").style.color = "white";
-    }
+    const theme = localStorage.getItem("theme") === "true" ? "dark" : "light";
+    document.documentElement.setAttribute('data-theme', theme);
 }
 handleDarkMode();
 
